@@ -45,9 +45,7 @@ const useBodies = () => {
     }
 
     const filterBy = (key: boolean) => {
-        const filtered = bodies.filter(body => body.isPlanet === key);
-        console.log(filtered);
-        setBodies(filtered);
+        setBodies(p => p.filter(body => body.isPlanet === key));
     }
 
     return {
