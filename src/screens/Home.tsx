@@ -6,7 +6,7 @@ import useBodies from "../hooks/useBodies";
 import './Home.css';
 
 const Home = () => {
-    const { bodies, loading, error } = useBodies();
+    const { bodies, loading } = useBodies();
 
     return (
         <>
@@ -17,8 +17,6 @@ const Home = () => {
         <Filters/>
 
         {loading && <p>Loading... This might take a while</p>}
-
-        {error && <p>{error}</p>}
 
         <div className="bodiesContainer">
             {bodies.map((body) => {

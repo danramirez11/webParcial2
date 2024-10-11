@@ -11,7 +11,6 @@ const useBodies = () => {
 
     const randomBody = () => {
         const random = Math.floor(Math.random() * bodies.length);
-        console.log(random);
         const body = bodies[random];
         navigate('/details', {state: {body}});
     }
