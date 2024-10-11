@@ -13,7 +13,7 @@ const Detail = () => {
             <h3>{body.englishName}</h3>
 
             <div className="tags">
-                <p className="tag">{body.moons} moons</p>
+                <p className="tag">{body.moons > 0 ? `${body.moons} moons` : 'no moons'} </p>
                 <p className="tag">
                 {body.isPlanet ? 'is a planet' : 'not a planet'}
                 </p>
