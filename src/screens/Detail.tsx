@@ -4,7 +4,6 @@ import { Body } from "../types/types";
 const Detail = () => {
     const location = useLocation();
     const body: Body = location.state.body;
-    console.log(body);
 
     return (
         <>

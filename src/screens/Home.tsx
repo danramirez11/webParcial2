@@ -1,7 +1,9 @@
 
 import BodySmall from "../components/BodieSmall/BodieSmall";
 import Filters from "../components/Filters/Filters";
+import RandomBtn from "../components/RandomBtn/randomBtn";
 import useBodies from "../hooks/useBodies";
+import './Home.css';
 
 const Home = () => {
     const { bodies, loading, error } = useBodies();
@@ -14,7 +16,7 @@ const Home = () => {
 
         <Filters/>
 
-        {loading && <p>This might take a while</p>}
+        {loading && <p>Loading... This might take a while</p>}
 
         {error && <p>{error}</p>}
 
@@ -25,6 +27,8 @@ const Home = () => {
                 )
             })}
         </div>
+
+        <RandomBtn/>
 
         </>
     )

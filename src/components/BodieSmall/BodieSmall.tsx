@@ -1,6 +1,7 @@
 
 import useBodies from "../../hooks/useBodies";
 import { Body } from "../../types/types";
+import './BodieSmall.css';
 
 interface BodySmallProps {
     body: Body;
@@ -9,7 +10,7 @@ interface BodySmallProps {
 const BodySmall = ({body}: BodySmallProps) => {
     const { seeDetails } = useBodies();
     return (
-        <div onClick={() => seeDetails(body)}>
+        <div className="bodySmall" onClick={() => seeDetails(body)}>
             <h4>{body.name}</h4>
             <div>
             <label htmlFor="density">Density</label>

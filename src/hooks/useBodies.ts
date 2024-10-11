@@ -9,6 +9,13 @@ const useBodies = () => {
     const [loading , setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const randomBody = () => {
+        const random = Math.floor(Math.random() * bodies.length);
+        console.log(random);
+        const body = bodies[random];
+        navigate('/details', {state: {body}});
+    }
+
 
     const fetch = async () => {
         const data = await fetchBodies().then(data => data).catch(err => setError(err));
@@ -21,7 +28,6 @@ const useBodies = () => {
 
     useEffect(() => {
         fetch();
-        return console.log('unmounting');
     }, []);
 
     const seeDetails = (body: Body) => {
@@ -34,6 +40,7 @@ const useBodies = () => {
             if (a[key] < b[key]) return -1;
             return 0;
         });
+        console.log(sorted);
 
         setBodies(sorted);
     }
@@ -50,7 +57,8 @@ const useBodies = () => {
         error,
         seeDetails,
         orderBy,
-        filterBy
+        filterBy,
+        randomBody
     };
 }
 
